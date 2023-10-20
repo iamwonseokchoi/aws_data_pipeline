@@ -1,0 +1,9 @@
+pandas==1.3.5
+pyspark==3.4.1
+s3fs==2022.11.0
+boto3==1.24.59
+awswrangler==2.17.0
+pyarrow==8.0.0
+dload==0.6
+venv-pack==0.2.0
+apache-airflow-providers-amazon==8.8.0
