@@ -1,3 +1,6 @@
+# environment.tar.gz for EMR
+emr_glue/environment.tar.gz
+
 # Ignore all .env files
 *.env
 
