@@ -3,7 +3,7 @@ emr_glue/environment.tar.gz
 
 # Ignore all .env files
 *.env
-
+notes.md
 # Ignore Python cache directories
 __pycache__/
 
