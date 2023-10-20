@@ -141,8 +141,25 @@ def main_app():
             - 비슷한 맥락으로 한국어를 위한 Elasticsearch의 ***Nori*** 플러그인도 적용은 하였으나 한글 데이터는 사용하지 않았습니다. 
         """
         st.markdown(raw_search_text)
+        st.markdown("""
+            ```
+            # 수집중인 로그 키워드 -> 키워드 조합으로 검색 가능 (예시: "Safari, logout, Paris, 2023-08")
+            {
+                "search_keywords": string (랜덤생성 상품명: "Lipstick", "Foundation", "Mascara", "Eyeliner", "Nail Polish", "BB"),
+                "session_duration": double (랜덤생성 세션 지속시간: 0 ~ 360),
+                "ip_address": string (랜덤생성 IP 주소),
+                "event": string (랜덤생성 이벤트: "login", "logout", "search", "view", "purchase"),
+                "user_agent": string (랜덤생성 브라우저: "Chrome", "Firefox", "Safari", "Opera" 등 및 드라이버, 모바일 환경),
+                "location": object(array) (랜덤생성 위치: [latitude, longitude, region, country code, continent/city]),
+                "session_actions": int (랜덤생성 세션 행동 횟수: 0 ~ 10),
+                "page_views": object(array) (랜덤생성 페이지 뷰 항목),
+                "timestamp": string (랜덤생성 타임스탬프: "2023-01-01 00:00:00"),
+                "user_id": string (uuid 랜덤생성)
+            }            
+            ```
+        """)
+        
         user_query = st.text_input("키워드 체인으로 검색:")
-
         if user_query:
             results = search(user_query)
             
@@ -252,7 +269,7 @@ def main_app():
         image = Image.open('app/images/archi.png')
         st.image(image, caption="AWS Data Pipeline Architecture")
         st.markdown("### Source Code")
-        st.markdown("GitHub: ")
+        st.markdown("https://github.com/iamwonseokchoi/aws_data_pipeline")
         
 if st.session_state.login_status:
     main_app()
