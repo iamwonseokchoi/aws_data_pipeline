@@ -1,0 +1,42 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "kafka-cluster:Connect",
+                "kafka-cluster:AlterCluster",
+                "kafka-cluster:DescribeCluster"
+            ],
+            "Resource": [
+                "arn:aws:kafka:ap-northeast-2:<PUT YOUR ACCOUNT ID HERE>:cluster/amore-kafka-cluster/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "kafka-cluster:*Topic*",
+                "kafka-cluster:WriteData",
+                "kafka-cluster:ReadData"
+            ],
+            "Resource": [
+                "arn:aws:kafka:ap-northeast-2:<PUT YOUR ACCOUNT ID HERE>:topic/amore-kafka-cluster/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "kafka-cluster:AlterGroup",
+                "kafka-cluster:DescribeGroup"
+            ],
+            "Resource": [
+                "arn:aws:kafka:ap-northeast-2:<PUT YOUR ACCOUNT ID HERE>:group/amore-kafka-cluster/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": "secretsmanager:GetSecretValue",
+            "Resource": "arn:aws:secretsmanager:ap-northeast-2:<PUT YOUR ACCOUNT ID HERE>:secret:AmazonMSK_amore-msk-secret-kms-zXbzjM"
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "glue:Get*",
+                "glue:List*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "glue:Create*",
+                "glue:Delete*",
+                "glue:Update*",
+                "glue:Put*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "glue:Start*",
+                "glue:Stop*",
+                "glue:Run*"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

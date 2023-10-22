@@ -1,0 +1,40 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "elasticmapreduce:ListClusters",
+                "elasticmapreduce:Describe*",
+                "elasticmapreduce:View*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "elasticmapreduce:RunJobFlow",
+                "elasticmapreduce:CreateCluster"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "elasticmapreduce:AddJobFlowSteps",
+                "elasticmapreduce:AddInstanceGroups",
+                "elasticmapreduce:TerminateJobFlows"
+            ],
+            "Resource": "arn:aws:elasticmapreduce:<PUT YOUR REGION HERE>:<PUT YOUR ACCOUNT ID HERE>:cluster/*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:ListBucket"
+            ],
+            "Resource": "arn:aws:s3:::<PUT YOUR BUCKET NAME HERE>/*"
+        }
+    ]
+}

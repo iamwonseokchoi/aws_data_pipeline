@@ -23,6 +23,7 @@ As a simple showcase, a sample mock streamlit frontend was created to bring toge
 - ec2_elastic: Elastic Stack (logstash.conf configuration and other small modifications were done to the existing Docker-compose to fit the use-case. Source repository from where the Elastic Docker-compose was pulled from is cited in the Docker-compose file)
 - emr_glue: EMR Serverles and Glue configs for Iceberg with Glue Data Catalog as metastore
 - msk_ec2: Spark structured stream scala job (Also Dockerized, as running stream jobs on EMR clusters turned out to be ultra expensive)
+- IAM: IAM Role policies used
 
 ## To Run
 Each module can technically be standalone and can be booted up using the Dockerfiles.
@@ -33,6 +34,7 @@ For Spark components, the spark-submit commands can be copied from the Docker CM
 
 ## Frontend App (Streamlit)
 Currently a version serving on Streamlit Cloud (Requires login): https://awsdatapipeline.streamlit.app/
+- Have deleted the MSK service tied to this for now due to costs as MSK cannot be turned off
 
 ![App](app/images/app.png)
 
