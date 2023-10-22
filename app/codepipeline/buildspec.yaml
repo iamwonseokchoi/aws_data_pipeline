@@ -1,0 +1,9 @@
+version: 0.2
+phases:
+  build:
+    commands:
+      - cd app
+      - pip install -r src/requirements.txt
+      - streamlit run main.py & 
+      - sleep 10
+      - pkill -f streamlit
